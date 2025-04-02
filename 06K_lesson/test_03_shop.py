@@ -51,11 +51,11 @@ def test_shop(driver):
     first_name_field = wait.until(EC.element_to_be_clickable(
         (By.ID, "first-name"))) 
     first_name_field.send_keys("Diana")
-    last_name_field = wait.until(EC.presence_of_element_located(
+    last_name_field = wait.until(EC.element_to_be_clickable(
         (By.ID, "last-name")))
     last_name_field.send_keys("Bazdyreva")
 
-    postal_code_field = wait.until(EC.presence_of_element_located(
+    postal_code_field = wait.until(EC.element_to_be_clickable(
         (By.ID, "postal-code")))
     postal_code_field.send_keys("400002")
 
