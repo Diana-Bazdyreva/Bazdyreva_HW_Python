@@ -48,8 +48,8 @@ def test_shop(driver):
         (By.CSS_SELECTOR, "#checkout")))
     checkout_button.click()
 
-    first_name_field = wait.until(EC.presence_of_element_located(
-        (By.ID, "first-name")))
+    first_name_field = wait.until(EC.element_to_be_clickable(
+        (By.ID, "first-name"))) 
     first_name_field.send_keys("Diana")
     last_name_field = wait.until(EC.presence_of_element_located(
         (By.ID, "last-name")))
