@@ -1,10 +1,6 @@
 import pytest
 import requests
-
-
-base_url = "https://yougile.com"
-auth_token = 'NctHb3PgAukS2LH+8gKNqiNoCu+71YBlMN9o9RoxVhrA-imauVylYRhmQfQEyffx'
-project_id = '4f66404e-400c-4ef0-a549-e403ed00b0cd'
+from config import base_url, auth_token, invalid_aut_token
 
 
 @pytest.fixture(scope="module")
@@ -17,6 +13,6 @@ def auth_headers():
 
 def test_get_company_by_id2(auth_headers):
     response = requests.get(
-        f"{base_url}/api-v2/projects/{project_id}", headers=auth_headers)
+        f"{base_url}/api-v2/projects/{invalid_aut_token}", headers=auth_headers)
 
-    assert response.status_code == 400
+    assert response.status_code == 404

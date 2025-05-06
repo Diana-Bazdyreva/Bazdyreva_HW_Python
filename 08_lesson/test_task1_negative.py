@@ -1,12 +1,9 @@
 import pytest
 import requests
+from config import base_url, auth_token
 
 
-base_url = "https://yougile.com"
-auth_token = 'NctHb3PgAukS2LH+8gKNqiNoCu+71YBlMN9o9RoxVhrA-imauVylYRhmQfQEyffx'
-
-
-@pytest.mark.parametrize("title", ["123R"])
+@pytest.mark.parametrize("title", [""])
 def test_project_creation(title):
     headers = {
         'Authorization': f'Token {auth_token}',

@@ -1,9 +1,6 @@
 import pytest
 import requests
-
-
-base_url = "https://yougile.com"
-auth_token = 'NctHb3PgAukS2LH+8gKNqiNoCu+71YBlMN9o9RoxVhrA-imauVylYRhmQfQEyffx'
+from config import base_url, auth_token
 
 
 @pytest.mark.parametrize("title", ["Evgenia"])

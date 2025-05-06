@@ -1,12 +1,8 @@
 import pytest
 import requests
+from config import base_url, auth_token, project_id
 
 # проверка с невалидным id
-
-base_url = "https://yougile.com"
-auth_token = 'NctHb3PgAukS2LH+8gKNqiNoCu+71YBlMN9o9RoxVhrA-imauVylYRhmQfQEyffx'
-project_id = '4f66404e-400c-4ef0-a549-e403ed00b0'
-
 
 @pytest.mark.parametrize("new_title", [
     "123456"
@@ -24,4 +20,4 @@ def test_project_update(new_title):
 
     response = requests.put(full_url, json=payload, headers=headers)
 
-    assert response.status_code == 201
+    assert response.status_code == 404
