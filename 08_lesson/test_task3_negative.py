@@ -13,6 +13,7 @@ def auth_headers():
 
 def test_get_company_by_id2(auth_headers):
     response = requests.get(
-        f"{base_url}/api-v2/projects/{invalid_aut_token}", headers=auth_headers)
+        f"{base_url}/api-v2/projects/{
+            invalid_aut_token}", headers=auth_headers)
 
     assert response.status_code == 404
