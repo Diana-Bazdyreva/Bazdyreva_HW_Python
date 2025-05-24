@@ -57,5 +57,6 @@ def test_shop(browser):
         actual_total = checkout_complete_page.get_total_amount()
         expected_total = "$58.29"
     with allure.step("Проверка финальной суммы"):
-        assert actual_total == expected_total, f"Ожидалось {
+        assert actual_total == expected_total, (f"Ожидалось {
             expected_total}, получено {actual_total}"
+        )
